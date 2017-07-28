@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const PersistentCollection = require('djs-collection-persistent');
 
-const settings = require("./settings.json");
+const settings = require("./settings.json"); // NOTE: This file is omitted from the repository, so it will need to be created locally. It contains two values: "prefix", which stores the prefix to be used in commands, and the Discord API token.
 const prefix = settings.prefix;
 const defaultGameState = "Hardcore Denny's";
 let gameName = defaultGameState;
@@ -46,7 +46,7 @@ bot.on("ready", () => {
 });
 
 bot.on("message", async (msg) => {
-  // ===Q U A L I T Y C H E C K===
+  // ===Q U A L I T Y - C H E C K===
   // ignore message if it doesn't start with the correct prefix OR it was sent by a bot OR it was sent in a DM
   if(!msg.content.startsWith(prefix) || msg.author.bot || msg.channel.type === "dm") return;
 
